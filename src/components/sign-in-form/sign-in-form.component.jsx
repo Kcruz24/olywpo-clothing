@@ -39,12 +39,22 @@ const SignInForm = () => {
 
 			resetFormFields();
 		} catch (error) {
-			const firebaseErrorCode = 'auth/wrong-password';
+			const firebaseErrorCodes = [
+				'auth/wrong-password',
+				'auth/user-not-found',
+			];
 
-			if (error.code === firebaseErrorCode) {
-				alert('Wrong Password');
-			} else {
-				console.log('Error signing in', error);
+			switch (error.code) {
+				case firebaseErrorCodes[0]:
+					alert('Wrong Password For Email');
+					break;
+
+				case firebaseErrorCodes[1]:
+					alert('No User associated with this email');
+					break;
+
+				default:
+					console.log('Error signing in', error);
 			}
 		}
 	};
@@ -83,7 +93,11 @@ const SignInForm = () => {
 
 				<div className="buttons-container">
 					<Button type="submit">Sign In</Button>
-					<Button onClick={signInGoogle} buttonType="google">
+					<Button
+						type="button"
+						onClick={signInGoogle}
+						buttonType="google"
+					>
 						Google Sign In
 					</Button>
 				</div>
