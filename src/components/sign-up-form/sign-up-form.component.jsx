@@ -39,17 +39,17 @@ const SignUpForm = () => {
 
 			const additionalInfo = { displayName };
 			await createUserDocumentFromAuth(user, additionalInfo);
-			resetFormFields();
+            resetFormFields();
+
 		} catch (error) {
-			const firebaseErrorCode = 'auth/email-already-in-use';
+            const firebaseErrorCode = 'auth/email-already-in-use';
+
 			if (error.code === firebaseErrorCode) {
 				alert('Cannot create User, email already in use');
 			} else {
 				console.log('Error', error);
 			}
 		}
-
-		//console.log(event.target)
 	};
 
 	const handleChange = (event) => {
