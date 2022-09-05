@@ -43,7 +43,6 @@ const SignInForm = () => {
 
 			setCurrentUser(user);
 
-
 			resetFormFields();
 		} catch (error) {
 			const firebaseErrorCodes = [
