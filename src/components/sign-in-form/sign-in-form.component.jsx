@@ -1,5 +1,4 @@
-import { useState, useContext } from 'react';
-import { UserContext } from '../../contexts/user.context';
+import { useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
@@ -25,12 +24,8 @@ const SignInForm = () => {
 		setFormFields(defaultFormFields);
 	};
 
-	const { setCurrentUser } = useContext(UserContext);
-
 	const signInGoogle = async () => {
-		const { user } = await signInWithGooglePopup();
-
-		await createUserDocumentFromAuth(user);
+		await signInWithGooglePopup();
 	};
 
 	const handleSubmit = async (event) => {
