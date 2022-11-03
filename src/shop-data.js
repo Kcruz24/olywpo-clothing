@@ -22,7 +22,7 @@ const SHOP_DATA = [
 			},
 			{
 				id: 4,
-				name: 'Grey Brim', 
+				name: 'Grey Brim',
 				imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
 				price: 25,
 			},
