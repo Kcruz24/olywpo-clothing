@@ -153,11 +153,11 @@ export const CartProvider = ({ children }) => {
 	};
 
 	const value = {
-		isCartOpen,
 		setIsCartOpen,
 		addItemToCart,
 		removeItemFromCart,
 		clearItemFromCart,
+		isCartOpen,
 		cartItems,
 		cartCount,
 		cartTotal,
